@@ -119,12 +119,8 @@ arrayAnimals.forEach( Element => {
 
     containerDom.innerHTML += `<div class='icon-cnt'>
                               
-                                <i class='fa-solid ${Element.prefix}${Element.name}'></i>
+                                <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
                                 <div>${Element.name}</div>
     
                                </div>`;
-        
-
-    
-
 })
