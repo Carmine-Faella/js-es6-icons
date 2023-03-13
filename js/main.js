@@ -1,3 +1,5 @@
+//Creo gli array di oggetti per le icone e la select
+
 const arrayAnimals = [
 	{
 		name: 'cat',
@@ -136,11 +138,14 @@ const arraySelect = [
     }
 ];
 
+//Creo le variabili utili
 
 const containerDom = document.getElementById('container');
 const newSelect = document.createElement('select');
 newSelect.id = 'selectType';
 const cntDom = document.querySelector('.cnt-select');
+
+//Popolo la select creata
 
 arraySelect.forEach( element => {
 
@@ -152,6 +157,8 @@ arraySelect.forEach( element => {
 })
 
 cntDom.append(newSelect)
+
+//Creo l'evento per la comparsa delle icone in base al tipo
 
 newSelect.addEventListener('change', function(){
 
@@ -208,6 +215,8 @@ newSelect.addEventListener('change', function(){
         })
     }
 })
+
+//Creo le funzioni utili per la creazione degli elementi
             
 function createDiv(){
 
@@ -240,6 +249,7 @@ function createCard(Element){
     divDom.append(iconDom);
     
 }
+
 
 
 
