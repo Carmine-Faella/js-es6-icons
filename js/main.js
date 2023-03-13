@@ -112,3 +112,19 @@ const arrayAnimals = [
 		color: 'blue'
 	}
 ];
+
+const containerDom = document.getElementById('container');
+
+arrayAnimals.forEach( Element => {
+
+    containerDom.innerHTML += `<div class='icon-cnt'>
+                              
+                                <i class='fa-solid ${Element.prefix}${Element.name}'></i>
+                                <div>${Element.name}</div>
+    
+                               </div>`;
+        
+
+    
+
+})
