@@ -200,7 +200,7 @@ function createCard(Element){
     iconDom.classList.add('fa-solid');
     iconDom.classList.add(`${Element.prefix}${Element.name}`);
     iconDom.style.color = `${Element.color}`
-    divDom.innerHTML = `${Element.name}`;
+    divDom.innerHTML = `<p>${Element.name}</p>`;
 
     containerDom.append(divDom); 
     divDom.append(iconDom);

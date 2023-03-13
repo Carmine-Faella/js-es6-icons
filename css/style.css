@@ -12,10 +12,6 @@
     margin: auto;
 }
 
-i{
-    padding: 1rem;
-}
-
 h1{
     padding: 1rem;
     color: rgb(66,174,220);
@@ -42,5 +38,16 @@ h1{
     height: 100px;
     text-align: center;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+i{
+    font-size: 2rem;
+    padding-top: 0.5rem;
+}
+
+
+
 
