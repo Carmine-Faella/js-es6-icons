@@ -116,6 +116,9 @@ const arrayAnimals = [
 const containerDom = document.getElementById('container');
 const selectDom = document.getElementById('selectType');
 
+
+selectDom.value = 'none';
+
 selectDom.addEventListener('change', function(){
 
     containerDom.innerHTML = '';
@@ -124,15 +127,10 @@ selectDom.addEventListener('change', function(){
         
         arrayAnimals.forEach( Element => {
 
-            containerDom.innerHTML += `<div class='icon-cnt'>
-                                      
-                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
-                                        <div>${Element.name}</div>
-            
-                                       </div>`;
+            createCard(Element);
+
         })
     }
-
     if(this.value == 'animal'){
         const animal = arrayAnimals.filter(element => {
 
@@ -144,15 +142,9 @@ selectDom.addEventListener('change', function(){
         })
         animal.forEach( Element => {
 
-            containerDom.innerHTML += `<div class='icon-cnt'>
-                                      
-                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
-                                        <div>${Element.name}</div>
-            
-                                       </div>`;
+            createCard(Element);
         })
     }
-
     if(this.value == 'vegetable'){
         const vegetable = arrayAnimals.filter(element => {
 
@@ -164,15 +156,9 @@ selectDom.addEventListener('change', function(){
         })
         vegetable.forEach( Element => {
 
-            containerDom.innerHTML += `<div class='icon-cnt'>
-                                      
-                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
-                                        <div>${Element.name}</div>
-            
-                                       </div>`;
+            createCard(Element);
         })
     }
-
     if(this.value == 'user'){
         const user = arrayAnimals.filter(element => {
 
@@ -184,14 +170,45 @@ selectDom.addEventListener('change', function(){
         })
         user.forEach( Element => {
 
-            containerDom.innerHTML += `<div class='icon-cnt'>
-                                      
-                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
-                                        <div>${Element.name}</div>
-            
-                                       </div>`;
+            createCard(Element);
         })
     }
-
-
 })
+            
+function createDiv(){
+
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('icon-cnt');
+
+    return newDiv
+}
+
+function createIcon(){
+    
+    const newI = document.createElement('i');
+    return newI
+
+}
+
+function createCard(Element){
+    const divDom = createDiv();
+    const iconDom = createIcon();
+
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    Element.color = '#'+ randomColor
+
+    iconDom.classList.add('fa-solid');
+    iconDom.classList.add(`${Element.prefix}${Element.name}`);
+    iconDom.style.color = `${Element.color}`
+    divDom.innerHTML = `${Element.name}`;
+
+    containerDom.append(divDom); 
+    divDom.append(iconDom);
+    
+}
+
+
+
+
+
+
