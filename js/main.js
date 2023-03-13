@@ -114,13 +114,160 @@ const arrayAnimals = [
 ];
 
 const containerDom = document.getElementById('container');
+const selectDom = document.getElementById('selectType');
 
-arrayAnimals.forEach( Element => {
+selectDom.addEventListener('change', function(){
 
-    containerDom.innerHTML += `<div class='icon-cnt'>
-                              
-                                <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
-                                <div>${Element.name}</div>
-    
-                               </div>`;
+    containerDom.innerHTML = '';
+
+    if(this.value == 'all'){
+        
+        arrayAnimals.forEach( Element => {
+
+            containerDom.innerHTML += `<div class='icon-cnt'>
+                                      
+                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
+                                        <div>${Element.name}</div>
+            
+                                       </div>`;
+        })
+    }
+
+    if(this.value == 'animal'){
+        const animal = arrayAnimals.filter(element => {
+
+            if(element.type == 'animal'){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        animal.forEach( Element => {
+
+            containerDom.innerHTML += `<div class='icon-cnt'>
+                                      
+                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
+                                        <div>${Element.name}</div>
+            
+                                       </div>`;
+        })
+    }
+
+    if(this.value == 'vegetable'){
+        const vegetable = arrayAnimals.filter(element => {
+
+            if(element.type == 'vegetable'){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        vegetable.forEach( Element => {
+
+            containerDom.innerHTML += `<div class='icon-cnt'>
+                                      
+                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
+                                        <div>${Element.name}</div>
+            
+                                       </div>`;
+        })
+    }
+
+    if(this.value == 'user'){
+        const user = arrayAnimals.filter(element => {
+
+            if(element.type == 'user'){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        user.forEach( Element => {
+
+            containerDom.innerHTML += `<div class='icon-cnt'>
+                                      
+                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
+                                        <div>${Element.name}</div>
+            
+                                       </div>`;
+        })
+    }
+
+
 })
+    /*if(this.value = 'animal'){
+        const animal = arrayAnimals.filter(element => {
+
+            if(element.type == 'animal'){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        animal.forEach( Element => {
+
+            containerDom.innerHTML += `<div class='icon-cnt'>
+                                      
+                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
+                                        <div>${Element.name}</div>
+            
+                                       </div>`;
+        })
+  
+    }
+    if(this.value = 'vegetable'){
+        const vegetable = arrayAnimals.filter(element => {
+
+            if(element.type == 'vegetable'){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        vegetable.forEach( Element => {
+
+            containerDom.innerHTML += `<div class='icon-cnt'>
+                                      
+                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
+                                        <div>${Element.name}</div>
+            
+                                       </div>`;
+        })
+  
+    }
+    if(this.value = 'user'){
+        const user = arrayAnimals.filter(element => {
+
+            if(element.type == 'user'){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        user.forEach( Element => {
+
+            containerDom.innerHTML += `<div class='icon-cnt'>
+                                      
+                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
+                                        <div>${Element.name}</div>
+            
+                                       </div>`;
+        })
+  
+    }
+
+
+
+
+
+
+
+/*\arrayAnimals.forEach( Element => {
+
+            containerDom.innerHTML += `<div class='icon-cnt'>
+                                      
+                                        <i class='fa-solid ${Element.prefix}${Element.name} ${Element.color}'></i>
+                                        <div>${Element.name}</div>
+            
+                                       </div>`;
+})*/
