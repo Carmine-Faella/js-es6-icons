@@ -113,13 +113,47 @@ const arrayAnimals = [
 	}
 ];
 
+const arraySelect = [
+    {
+        value: 'none',
+        text: 'none'
+    },
+    {
+        value: 'all',
+        text: 'all'
+    },
+    {
+        value: 'animal',
+        text: 'animal'
+    },
+    {
+        value: 'vegetable',
+        text: 'vegetable'
+    },
+    {
+        value: 'user',
+        text: 'user'
+    }
+];
+
+
 const containerDom = document.getElementById('container');
-const selectDom = document.getElementById('selectType');
+const newSelect = document.createElement('select');
+newSelect.id = 'selectType';
+const cntDom = document.querySelector('.cnt-select');
 
+arraySelect.forEach( element => {
 
-selectDom.value = 'none';
+    const newOption = document.createElement('option');
+    newSelect.appendChild(newOption);
 
-selectDom.addEventListener('change', function(){
+    newOption.value = `${element.value}`
+    newOption.innerHTML = `${element.text}`
+})
+
+cntDom.append(newSelect)
+
+newSelect.addEventListener('change', function(){
 
     containerDom.innerHTML = '';
 
